@@ -10,13 +10,15 @@ import UIKit
 class WeatherCoordinator: Coordinator {
     
     let navigationController: UINavigationController
+    let viewModel: WeatherViewModel
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, viewModel: WeatherViewModel) {
         self.navigationController = navigationController
+        self.viewModel = viewModel
     }
     
     func start() {
-        let viewController = WeatherViewController()
+        let viewController = WeatherViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
 }

@@ -23,7 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         window?.rootViewController = navigationController
         
-        let coordinator = WeatherCoordinator(navigationController: navigationController)
+        let service = WeatherServiceHTTP()
+        let viewModel = WeatherViewModel(service: service)
+        let coordinator = WeatherCoordinator(
+            navigationController: navigationController,
+            viewModel: viewModel
+        )
         coordinator.start()
     }
 
