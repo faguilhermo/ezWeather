@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         window?.rootViewController = navigationController
         
-        let coordinator = WeatherCoordinator(navigationController: navigationController)
+        let coordinator = MainCoordinator(navigationController: navigationController)
         coordinator.start()
     }
 

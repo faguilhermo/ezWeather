@@ -36,7 +36,7 @@ class WeatherViewModel {
     func getWeatherStatus(with code: Int) -> (WeatherStatus, String) {
         switch code {
         case 0:
-            return (.clearSky, "limpo")
+            return (.clearSky, "céu limpo")
         case 1...3:
             return (.partlyCloudy, "pouco nublado")
         case 45...48:
@@ -46,11 +46,11 @@ class WeatherViewModel {
         case 71...77, 85...86:
             return (.snow, "neve")
         default:
-            return (.clearSky, "limpo")
+            return (.clearSky, "céu limpo")
         }
     }
     
-    func transform(currentWeather: Double) -> String {
+    func convert(currentWeather: Double) -> String {
         let currentWeatherRounded = Int(currentWeather)
         let currentWeatherString = String(currentWeatherRounded)
         return currentWeatherString

@@ -20,4 +20,8 @@ extension ViewCode {
         addConstraints()
         setupViews()
     }
+    
+    func setupViews() {
+        // Implemented only if necessary
+    }
 }

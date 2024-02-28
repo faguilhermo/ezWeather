@@ -16,7 +16,7 @@ class WeatherView: UIView {
     init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        self.setupViewCode()
+        setupViewCode()
     }
     
     required init?(coder: NSCoder) {
@@ -80,15 +80,13 @@ class WeatherView: UIView {
         return weekWeatherText
     }()
     
-    
-    
     // MARK: - Function
     func set(weather: Weather) {
         backgroundColor = .background
         
         let currentStatusCode = weather.currentStatusCode
         weatherImage.image = UIImage(named: viewModel.getWeatherStatus(with: currentStatusCode).0.rawValue)
-        weatherTemperature.text = viewModel.transform(currentWeather: weather.currentTemperature)
+        weatherTemperature.text = viewModel.convert(currentWeather: weather.currentTemperature)
         weatherStatus.text = viewModel.getWeatherStatus(with: currentStatusCode).1.uppercased()
     }
 }
