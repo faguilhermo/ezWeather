@@ -45,18 +45,19 @@ class WeatherViewController: UIViewController {
                 self?.customView?.set(weather: weather)
                 self?.showLoading(false)
             case .error:
-                self?.showError()
+                self?.showError(true)
+                self?.showLoading(false)
             }
         }
     }
     
     // MARK: - Call state
     private func showLoading(_ isLoading: Bool) {
-        // TODO: Implement loading
+        isLoading ? startFullScreenLoading() : stopFullScreenLoading()
     }
     
-    private func showError() {
-        // TODO: Implement error
+    private func showError(_ isResponseInvalid: Bool) {
+        isResponseInvalid ? startFullScreenError() : stopFullScreenError()
         showLoading(false)
     }
 }

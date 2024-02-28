@@ -8,8 +8,6 @@
 import Foundation
 
 struct Weather {
-    let currentWeatherState: Double
-    let currentWeatherTemperature: Double
-    let dailyWeatherState: [Double]
-    let dailyWeatherTemperature: [Double]
+    let currentTemperature: Double
+    let currentStatusCode: Int
 }

@@ -12,9 +12,10 @@ class WeatherCoordinator: Coordinator {
     let navigationController: UINavigationController
     let viewModel: WeatherViewModel
     
-    init(navigationController: UINavigationController, viewModel: WeatherViewModel) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.viewModel = viewModel
+        let service = WeatherServiceHTTP()
+        self.viewModel = WeatherViewModel(service: service)
     }
     
     func start() {

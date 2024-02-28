@@ -19,7 +19,7 @@ class WeatherServiceHTTP: WeatherService {
     ) {
         
         guard
-            let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min&timezone=America%2FSao_Paulo")
+            let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=-23.4628&longitude=-46.5333&current=temperature_2m,is_day,weather_code&timezone=auto")
         else {
             failure(InvalidURL())
             return
@@ -37,16 +37,12 @@ class WeatherServiceHTTP: WeatherService {
                 let weatherData = try self.decoder.decode(
                     WeatherResponse.self,
                     from: data
-                ).daily.temperature2MMax
-
-//                guard
-//                    let weatherData = weatherData
-//                else {
-//                    failure(InvalidParseError())
-//                    return
-//                }
+                )
                 
-                let weatherTemperature = Weather(weatherTemperature: weatherData[0])
+                let weatherTemperature = Weather(
+                    currentTemperature: weatherData.current.temperature2M, 
+                    currentStatusCode: weatherData.current.weatherCode
+                )
                 
                 success(weatherTemperature)
             } catch {

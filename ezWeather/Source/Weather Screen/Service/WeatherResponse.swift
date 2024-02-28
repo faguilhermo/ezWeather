@@ -7,16 +7,21 @@
 
 import Foundation
 
-// MARK: - Welcome
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let weatherResponse = try? JSONDecoder().decode(WeatherResponse.self, from: jsonData)
+
+import Foundation
+
+// MARK: - WeatherResponse
 struct WeatherResponse: Codable {
     let latitude, longitude, generationtimeMS: Double
     let utcOffsetSeconds: Int
     let timezone, timezoneAbbreviation: String
     let elevation: Int
-    let hourlyUnits: HourlyUnits
-    let hourly: Hourly
-    let dailyUnits: DailyUnits
-    let daily: Daily
+    let currentUnits: CurrentUnits
+    let current: Current
 
     enum CodingKeys: String, CodingKey {
         case latitude, longitude
@@ -25,53 +30,34 @@ struct WeatherResponse: Codable {
         case timezone
         case timezoneAbbreviation = "timezone_abbreviation"
         case elevation
-        case hourlyUnits = "hourly_units"
-        case hourly
-        case dailyUnits = "daily_units"
-        case daily
+        case currentUnits = "current_units"
+        case current
     }
 }
 
-// MARK: - Daily
-struct Daily: Codable {
-    let time: [String]
-    let temperature2MMax, temperature2MMin: [Double]
+// MARK: - Current
+struct Current: Codable {
+    let time: String
+    let interval, isDay, weatherCode: Int
+    let temperature2M: Double
 
     enum CodingKeys: String, CodingKey {
-        case time
-        case temperature2MMax = "temperature_2m_max"
-        case temperature2MMin = "temperature_2m_min"
-    }
-}
-
-// MARK: - DailyUnits
-struct DailyUnits: Codable {
-    let time, temperature2MMax, temperature2MMin: String
-
-    enum CodingKeys: String, CodingKey {
-        case time
-        case temperature2MMax = "temperature_2m_max"
-        case temperature2MMin = "temperature_2m_min"
-    }
-}
-
-// MARK: - Hourly
-struct Hourly: Codable {
-    let time: [String]
-    let temperature2M: [Double]
-
-    enum CodingKeys: String, CodingKey {
-        case time
+        case time, interval
         case temperature2M = "temperature_2m"
+        case isDay = "is_day"
+        case weatherCode = "weather_code"
     }
 }
 
-// MARK: - HourlyUnits
-struct HourlyUnits: Codable {
-    let time, temperature2M: String
+// MARK: - CurrentUnits
+struct CurrentUnits: Codable {
+    let time, interval, temperature2M, isDay: String
+    let weatherCode: String
 
     enum CodingKeys: String, CodingKey {
-        case time
+        case time, interval
         case temperature2M = "temperature_2m"
+        case isDay = "is_day"
+        case weatherCode = "weather_code"
     }
 }
