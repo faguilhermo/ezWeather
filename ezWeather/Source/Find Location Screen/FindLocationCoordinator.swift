@@ -13,11 +13,12 @@ class FindLocationCoordinator: Coordinator {
     var childCoordinator = [Coordinator]()
     var navigationController: UINavigationController
     let viewModel: FindLocationViewModel
+    let locationManager = LocationManager()
     
     // MARK: - Initializer
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        viewModel = FindLocationViewModel()
+        viewModel = FindLocationViewModel(locationManager: locationManager, navigationController: navigationController)
     }
     
     // MARK: - Starts

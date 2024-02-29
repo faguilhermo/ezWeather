@@ -33,6 +33,7 @@
 		0CB73A9F2B8FC442007088C3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB73A9E2B8FC442007088C3 /* Location.swift */; };
 		0CB73AA12B8FC5E9007088C3 /* WeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB73AA02B8FC5E9007088C3 /* WeatherCoordinator.swift */; };
 		0CB73AA32B8FC783007088C3 /* FindLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB73AA22B8FC783007088C3 /* FindLocationCoordinator.swift */; };
+		0CB73AA62B9001FE007088C3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB73AA52B9001FE007088C3 /* LocationManager.swift */; };
 		0CED674E2B8EA7F700426D9E /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CED674D2B8EA7F700426D9E /* RobotoCondensed-Regular.ttf */; };
 		0CED67502B8EAEA900426D9E /* Sturkopf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CED674F2B8EAEA900426D9E /* Sturkopf.ttf */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		0CB73A9E2B8FC442007088C3 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0CB73AA02B8FC5E9007088C3 /* WeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCoordinator.swift; sourceTree = "<group>"; };
 		0CB73AA22B8FC783007088C3 /* FindLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLocationCoordinator.swift; sourceTree = "<group>"; };
+		0CB73AA52B9001FE007088C3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0CED674D2B8EA7F700426D9E /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		0CED674F2B8EAEA900426D9E /* Sturkopf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sturkopf.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,9 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				0CB73AA22B8FC783007088C3 /* FindLocationCoordinator.swift */,
-				0CB73A972B8FC0C9007088C3 /* ViewModel */,
-				0CB73A962B8FC0C3007088C3 /* View */,
+				0CB73AA42B9001D6007088C3 /* Location Manager */,
 				0CB73A952B8FC0BE007088C3 /* Model */,
+				0CB73A962B8FC0C3007088C3 /* View */,
+				0CB73A972B8FC0C9007088C3 /* ViewModel */,
 			);
 			path = "Find Location Screen";
 			sourceTree = "<group>";
@@ -277,6 +280,14 @@
 				0CB73A9C2B8FC3B3007088C3 /* FindLocationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0CB73AA42B9001D6007088C3 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0CB73AA52B9001FE007088C3 /* LocationManager.swift */,
+			);
+			path = "Location Manager";
 			sourceTree = "<group>";
 		};
 		0CED674C2B8EA7A200426D9E /* Fonts */ = {
@@ -434,6 +445,7 @@
 				0CB73A992B8FC172007088C3 /* FindLocationViewController.swift in Sources */,
 				0C573DAE2ACE5E83008928D1 /* SceneDelegate.swift in Sources */,
 				0CB73A932B8ED1AA007088C3 /* ErrorViewContainer.swift in Sources */,
+				0CB73AA62B9001FE007088C3 /* LocationManager.swift in Sources */,
 				0C573DDF2ACE6734008928D1 /* Coordinator.swift in Sources */,
 				0CB73A9F2B8FC442007088C3 /* Location.swift in Sources */,
 				0CB73AA12B8FC5E9007088C3 /* WeatherCoordinator.swift in Sources */,

@@ -11,6 +11,12 @@ class WeatherServiceHTTP: WeatherService {
     
     // MARK: - Properties
     private let decoder = JSONDecoder()
+    let location: Location
+    
+    // MARK: - Initializer
+    init(location: Location) {
+        self.location = location
+    }
     
     // MARK: - Function
     func fetchWeather(
@@ -19,7 +25,7 @@ class WeatherServiceHTTP: WeatherService {
     ) {
         
         guard
-            let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=-23.4628&longitude=-46.5333&current=temperature_2m,is_day,weather_code&timezone=auto")
+            let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=\(location.latitude)&longitude=\(location.longitude)&current=temperature_2m,is_day,weather_code&timezone=auto")
         else {
             failure(InvalidURL())
             return

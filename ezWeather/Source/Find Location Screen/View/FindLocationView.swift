@@ -64,7 +64,7 @@ class FindLocationView: UIView {
     }()
     
     @objc func getLocationAccessButtonPressed() {
-        print("pegar localização")
+        viewModel.getUserLocation()
     }
     
     // MARK: - Setters

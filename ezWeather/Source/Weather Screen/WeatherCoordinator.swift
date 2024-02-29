@@ -13,11 +13,13 @@ class WeatherCoordinator: Coordinator {
     var childCoordinator = [Coordinator]()
     var navigationController: UINavigationController
     let viewModel: WeatherViewModel
+    let location: Location
     
     // MARK: - Initializer
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, location: Location) {
         self.navigationController = navigationController
-        let service = WeatherServiceHTTP()
+        self.location = location
+        let service = WeatherServiceHTTP(location: location)
         self.viewModel = WeatherViewModel(service: service)
     }
     
