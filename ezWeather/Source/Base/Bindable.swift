@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 class Bindable<T> {
     typealias Listener = (T) -> Void
     

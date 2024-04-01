@@ -7,13 +7,6 @@
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let weatherResponse = try? JSONDecoder().decode(WeatherResponse.self, from: jsonData)
-
-import Foundation
-
 // MARK: - WeatherResponse
 struct WeatherResponse: Codable {
     let latitude, longitude, generationtimeMS: Double
